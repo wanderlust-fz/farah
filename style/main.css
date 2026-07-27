@@ -1,0 +1,738 @@
+/* =============================================
+   LILAC BIRTHDAY THEME - PREMIUM EDITION
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Premium Solid Color Palette (No Gradients) */
+  --bg-main:       #f8f5fd;   /* Elegant lilac-white */
+  --color-primary: #754bbd;   /* Deep vibrant lilac */
+  --color-secondary:#a37ce6;  /* Mid lilac */
+  --color-soft:    #d0bcf4;   /* Soft pastel lilac */
+  --color-pale:    #ece4fa;   /* Very pale lilac */
+  
+  /* Contrast Accents (Solid & harmonious) */
+  --accent-yellow: #fde24f;   /* Pastel gold */
+  --accent-pink:   #ff9ebb;   /* Soft rose */
+  --accent-mint:   #8eecc7;   /* Pastel mint */
+  
+  /* Typography & Lines */
+  --text-dark:     #2b1b42;   /* Deep dark plum */
+  --text-mid:      #5d447d;   /* Muted plum */
+  --text-light:    #8b70ab;   /* Light plum */
+  --white:         #ffffff;   /* Pure white */
+  --border-dark:   #2b1b42;   /* Premium solid borders */
+}
+
+/* === RESET & BASE === */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  overflow: hidden;
+  /* Stylish neobrutalist grid/dot pattern */
+  background-image: 
+    radial-gradient(var(--color-soft) 2px, transparent 2px);
+  background-size: 28px 28px;
+}
+
+/* === FLOATING SHAPES ANIMATION === */
+@keyframes float {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-15px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes floatReverse {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(15px) rotate(-5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.05); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.3; transform: scale(0.8); }
+}
+
+/* === AUDIO === */
+.song {
+  visibility: hidden;
+}
+
+/* === CONTAINER === */
+.container {
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  visibility: hidden;
+  width: 100vw;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Page Frame Border - adds a super premium editorial touch */
+.container::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  border: 3px solid var(--border-dark);
+  pointer-events: none;
+  z-index: 10;
+  border-radius: 12px;
+}
+
+.container > div {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -15vh;
+}
+
+/* === SECTION ONE — GREETING === */
+.one {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  color: var(--text-dark);
+}
+
+.one h1 {
+  font-size: 5.5rem;
+  margin: 0 0 10px 0;
+  line-height: 1.1;
+  font-weight: 400;
+  position: relative;
+}
+
+#name {
+  color: var(--color-primary);
+  font-style: italic;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+#name::after {
+  content: '';
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: var(--accent-yellow);
+  z-index: -1;
+  border: 2px solid var(--border-dark);
+}
+
+.two {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text-mid);
+  letter-spacing: 0.05em;
+  margin-top: 15px;
+  display: inline-block;
+  background: var(--color-pale);
+  padding: 8px 20px;
+  border: 2px solid var(--border-dark);
+  border-radius: 30px;
+  box-shadow: 4px 4px 0 var(--border-dark);
+}
+
+/* === SECTION THREE === */
+.three {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 3rem;
+  color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.party-cat {
+  height: 200px;
+  width: auto;
+  max-width: 85vw;
+  object-fit: contain;
+  filter: drop-shadow(5px 5px 0px var(--border-dark));
+  animation: float 3s ease-in-out infinite;
+}
+
+.three p {
+  display: inline-block;
+  background: var(--white);
+  border: 3px solid var(--border-dark);
+  padding: 15px 45px;
+  border-radius: 20px;
+  box-shadow: 6px 6px 0 var(--accent-pink);
+  position: relative;
+  margin: 0;
+}
+
+/* === SECTION FOUR — CHAT BOX === */
+.four .text-box {
+  border: 3px solid var(--border-dark);
+  border-radius: 24px;
+  margin: 0 auto;
+  padding: 35px 30px 30px;
+  position: relative;
+  width: 600px;
+  max-width: 88%;
+  background-color: var(--white);
+  box-shadow: 8px 8px 0px var(--color-primary);
+  text-align: left;
+}
+
+.four .text-box::before {
+  content: '✦ note';
+  position: absolute;
+  top: -14px;
+  left: 24px;
+  background: var(--accent-yellow);
+  border: 2px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 2px 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.text-box p {
+  margin: 0;
+  line-height: 1.8;
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+.text-box span {
+  visibility: hidden;
+}
+
+.text-box .fake-btn {
+  background-color: var(--accent-mint);
+  border: 2px solid var(--border-dark);
+  border-radius: 12px;
+  bottom: -22px;
+  color: var(--text-dark);
+  font-weight: 700;
+  padding: .6rem 1.5rem;
+  position: absolute;
+  right: 25px;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  box-shadow: 3px 3px 0 var(--border-dark);
+  transition: all 0.2s ease;
+}
+
+.text-box .fake-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--border-dark);
+}
+
+/* === SECTION FIVE — IDEA TEXT (DRAMATIC TYPOGRAPHY) === */
+.five p {
+  left: 0;
+  position: absolute;
+  right: 0;
+  margin: 0;
+  padding: 0 2rem;
+  line-height: 1.2;
+}
+
+/* "I stopped and thought..." — italic elegan berkontras tinggi */
+.idea-1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+}
+
+/* "what would actually matter." — BESAR & BOLD, utama */
+.idea-2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  position: relative;
+  display: inline-block;
+}
+
+/* "I wanted to do something meaningful." */
+.idea-3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text-mid);
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+.idea-3 strong {
+  border-radius: 12px;
+  display: inline-block;
+  padding: 2px 20px 6px;
+  color: var(--text-dark);
+  background-color: var(--accent-yellow);
+  border: 2.5px solid var(--border-dark);
+  box-shadow: 5px 5px 0 var(--color-primary);
+  font-style: normal;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 2.8rem;
+  letter-spacing: -0.01em;
+}
+
+/* "Because," — label jelas & berkontras */
+.idea-4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* "You Are Special :)" — HEADLINE UTAMA */
+.five .idea-5 {
+  font-size: 5.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  -webkit-text-stroke: 1px var(--color-primary);
+  text-shadow: 5px 5px 0 var(--accent-yellow);
+}
+
+.idea-5 span,
+.idea-6 span,
+.wish-hbd span {
+  display: inline-block;
+}
+
+.idea-6 span {
+  font-size: 16rem;
+  color: var(--color-soft);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+}
+
+/* === SECTION SIX — PHOTO === */
+.six {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.six img {
+  display: block;
+  max-width: 100%;
+}
+
+.profile-picture {
+  border: 4px solid var(--border-dark);
+  border-radius: 28px;
+  outline: 4px solid var(--accent-yellow);
+  outline-offset: 4px;
+  box-shadow: 8px 8px 0 var(--border-dark);
+  transition: transform 0.3s ease;
+  height: 240px;
+  width: 240px;
+  object-fit: cover;
+  object-position: center;
+  background-color: var(--white);
+  transform: none !important;
+  rotate: none;
+}
+
+.profile-picture:hover {
+  transform: scale(1.03);
+}
+
+.six .hat {
+  left: 50%;
+  transform: translateX(-85px);
+  position: absolute;
+  top: -60px;
+  width: 85px;
+  z-index: 2;
+  filter: drop-shadow(3px 3px 0px var(--border-dark));
+}
+
+.wish {
+  margin-top: 25px;
+}
+
+.wish-hbd {
+  font-size: 3.5rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  -webkit-text-stroke: 1px var(--border-dark);
+  text-shadow: 4px 4px 0 var(--accent-yellow);
+}
+
+.wish h5 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 15px 0 0;
+  color: var(--text-mid);
+  background: var(--color-pale);
+  display: inline-block;
+  padding: 6px 18px;
+  border: 2px solid var(--border-dark);
+  border-radius: 30px;
+  box-shadow: 3px 3px 0 var(--border-dark);
+}
+
+/* === SECTION SEVEN — BALLOONS === */
+.baloons img {
+  display: inline-block;
+  position: absolute;
+  filter: drop-shadow(3px 3px 0px var(--border-dark));
+}
+
+.baloons img:nth-child(even) {
+  left: -5%;
+}
+
+.baloons img:nth-child(odd) {
+  right: -5%;
+}
+
+.baloons img:nth-child(3n + 0) {
+  left: 25%;
+}
+
+/* === LAYER FIXED === */
+.seven,
+.eight {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  pointer-events: none;
+}
+
+/* === RICH FLOATING DECORATIVE SHAPES & STARS === */
+.decorative-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.shape {
+  position: fixed;
+  display: inline-block;
+  user-select: none;
+  filter: drop-shadow(2px 2px 0px var(--border-dark));
+}
+
+/* Specific position & styling for each star/shape floating at the edges */
+.star-1  { top: 8vh;   left: 5vw;   font-size: 2.2rem; color: var(--accent-pink);   animation: float 4s ease-in-out infinite; }
+.star-2  { top: 10vh;  right: 6vw;  font-size: 2.5rem; color: var(--accent-yellow); animation: floatReverse 4.5s ease-in-out infinite; }
+.star-3  { bottom: 12vh; left: 6vw;  font-size: 2rem;   color: var(--color-primary); animation: twinkle 3s ease-in-out infinite; }
+.star-4  { bottom: 10vh; right: 5vw; font-size: 2.4rem; color: var(--accent-mint);   animation: float 5s ease-in-out infinite; }
+
+.star-5  { top: 42vh;  left: 3vw;   font-size: 1.8rem; color: var(--accent-yellow); animation: pulse 3.5s ease-in-out infinite; }
+.star-6  { top: 38vh;  right: 4vw;  font-size: 2rem;   color: var(--accent-pink);   animation: floatReverse 3.8s ease-in-out infinite; }
+
+.star-7  { top: 22vh;  left: 14vw;  font-size: 1.6rem; animation: twinkle 2.5s ease-in-out infinite; }
+.star-8  { bottom: 25vh; right: 9vw; font-size: 1.8rem; animation: float 4.2s ease-in-out infinite; }
+.star-9  { top: 75vh;  left: 11vw;  font-size: 1.8rem; animation: pulse 3s ease-in-out infinite; }
+
+.star-10 { top: 60vh;  left: 4vw;   font-size: 2.2rem; color: var(--color-secondary); animation: float 4.8s ease-in-out infinite; }
+.star-11 { top: 70vh;  right: 4vw;  font-size: 2rem;   color: var(--accent-yellow); animation: twinkle 3.2s ease-in-out infinite; }
+.star-12 { top: 18vh;  right: 15vw; font-size: 1.5rem; color: var(--border-dark);   animation: spin 12s linear infinite; }
+
+/* Custom Geometric Neo-brutalist Shapes */
+.shape-circle-1 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-mint);
+  border: 2px solid var(--border-dark);
+  top: 28vh;
+  right: 7vw;
+  animation: float 4s ease-in-out infinite;
+}
+
+.shape-circle-2 {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-pink);
+  border: 2px solid var(--border-dark);
+  bottom: 32vh;
+  left: 4vw;
+  animation: floatReverse 3.6s ease-in-out infinite;
+}
+
+.shape-square-1 {
+  width: 16px;
+  height: 16px;
+  background: var(--accent-yellow);
+  border: 2px solid var(--border-dark);
+  top: 50vh;
+  right: 3vw;
+  transform: rotate(45deg);
+  animation: spin 8s linear infinite;
+}
+
+/* === SECTION EIGHT — CONFETTI DOTS === */
+.eight svg {
+  left: 0;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: 25px;
+  z-index: -1;
+}
+
+.eight svg:nth-child(1)  { fill: var(--color-primary);  left: 8vw;  top: 10vh; }
+.eight svg:nth-child(2)  { fill: var(--accent-pink);   left: 32vw; top: 18vh; }
+.eight svg:nth-child(3)  { fill: var(--accent-yellow); left: 20vw; top: 38vh; }
+.eight svg:nth-child(4)  { fill: var(--accent-mint);   left: 55vw; top: 48vh; }
+.eight svg:nth-child(5)  { fill: var(--color-soft);   left: 10vw;  top: 75vh; }
+.eight svg:nth-child(6)  { fill: var(--color-primary);  left: 78vw; top: 35vh; }
+.eight svg:nth-child(7)  { fill: var(--accent-pink);   left: 85vw; top: 68vh; }
+.eight svg:nth-child(8)  { fill: var(--accent-yellow); left: 40vw; top: 88vh; }
+.eight svg:nth-child(9)  { fill: var(--accent-mint);   left: 82vw; top: 90vh; }
+
+/* === SECTION NINE — CLOSING === */
+.nine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.faceless-img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--border-dark);
+  outline: 5px solid var(--accent-yellow);
+  outline-offset: 4px;
+  box-shadow: 8px 8px 0 var(--border-dark);
+  margin-bottom: 20px;
+  background-color: var(--white);
+  transition: transform 0.3s ease;
+}
+
+.faceless-img:hover {
+  transform: scale(1.04);
+}
+
+.nine p {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin: 0 0 10px;
+}
+
+.nine .from-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 5px;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 0 var(--accent-yellow);
+}
+
+#replay {
+  cursor: pointer;
+  z-index: 3;
+  color: var(--text-dark);
+  background-color: var(--accent-yellow);
+  font-weight: 700;
+  border: 2px solid var(--border-dark);
+  border-radius: 50px;
+  padding: 8px 30px;
+  display: inline-block;
+  box-shadow: 4px 4px 0 var(--border-dark);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+#replay:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--border-dark);
+  background-color: var(--white);
+}
+
+/* =============================================
+   MEDIA QUERIES
+   ============================================= */
+@media screen and (max-height: 1000px) {
+  .six .hat {
+    top: -24%;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .container > div {
+    top: 50%;
+  }
+  .six img {
+    height: 260px;
+  }
+  .six .hat {
+    top: -24%;
+    width: 75px;
+  }
+  .wish-hbd {
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container::after {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border-width: 2px;
+  }
+
+  .one h1 {
+    font-size: 3.5rem;
+  }
+
+  .two {
+    font-size: 1rem;
+    padding: 6px 14px;
+  }
+
+  .three p {
+    font-size: 1.8rem;
+    padding: 10px 25px;
+  }
+
+  .four .text-box {
+    width: 95%;
+    padding: 25px 20px;
+  }
+
+  .text-box .fake-btn {
+    bottom: -20px;
+    right: 15px;
+    padding: .5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .idea-1 {
+    font-size: 1.1rem;
+  }
+
+  .idea-2 {
+    font-size: 2.4rem;
+  }
+
+  .idea-3 {
+    font-size: 1.8rem;
+  }
+
+  .idea-3 strong {
+    font-size: 2rem;
+  }
+
+  .idea-5 {
+    font-size: 3rem !important;
+  }
+
+  .idea-6 span {
+    font-size: 9rem;
+  }
+
+  .six img {
+    height: 220px;
+  }
+
+  .six .hat {
+    width: 60px;
+    top: -22%;
+  }
+
+  .wish-hbd {
+    font-size: 2.2rem;
+  }
+
+  .wish h5 {
+    font-size: 1rem;
+    padding: 4px 12px;
+  }
+
+  .faceless-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .nine p {
+    font-size: 1.3rem;
+  }
+
+  .nine .from-text {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  #replay {
+    font-size: 0.9rem;
+    padding: 6px 20px;
+  }
+}
